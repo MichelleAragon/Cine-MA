@@ -52,7 +52,7 @@ export function MoviesGrid({ movies }) {
       />
       <CardGroup className="cards-container">
         {/* {movies.length === 0 && <span>Loading...</span>} */}
-        <Row xs={2} md={6} className="g-5 movies-container">
+        <Row xs={2} md={6} className="g-4 movies-container">
           {movies.length > 0 &&
             filterMovies().map((movie) => (
               <Col className="movie-container">

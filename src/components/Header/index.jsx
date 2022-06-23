@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Container } from "react-bootstrap";
-import "./index.css";
+
 
 export const Header = () => (
   <>
