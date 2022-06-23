@@ -1,0 +1,23 @@
+.card-title {
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+}
+
+.movie-grid {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    
+}
+
+.movie-card {
+    min-height: 100%;
+}
+
+
+/* font-family: 'Cormorant Garamond', serif; */
+
+/* font-family: 'Montserrat', sans-serif; */
+/* font-family: 'Quicksand', sans-serif;  */

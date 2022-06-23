@@ -33,7 +33,6 @@ function App() {
       <Header onSubmitQuery={onSubmitQuery} />
       <SearchBar onSubmitQuery={onSubmitQuery} />
       <MoviesGrid movies={movies} />
-
     </div>
   );
 }
