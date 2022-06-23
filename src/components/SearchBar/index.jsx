@@ -25,7 +25,7 @@ export function SearchBar({ onSubmitQuery }) {
                 onChange={handleChange}
               />
             </Col>
-            <Button variant="secondary" onClick={handleClick}>
+            <Button variant="danger" onClick={handleClick}>
               Search
             </Button>
           </Stack>
