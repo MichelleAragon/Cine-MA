@@ -1,0 +1,4 @@
+.modal-overview {
+    text-align: justify;
+    --bs-body-font-family: var(--bs-font-sans-serif);
+}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CardGroup, Row, Col } from "react-bootstrap";
+import { MovieModal } from "../Modal";
 import { MovieCard } from "../MovieCard";
 import { RatingSelector } from "../RatingSelector";
 import "./index.css";
@@ -23,6 +24,18 @@ const ratingToVoteAverage = (selectedRating) => {
 
 export function MoviesGrid({ movies }) {
   const [selectedRating, setSelectedRating] = useState(0);
+  const [show, setShow] = useState(false);
+  const [movieToShow, setMovieToShow] = useState(null)
+
+  const handleShowMovieModal = (movieId) => {
+    setMovieToShow(movies.find((movie) => movie.id === movieId))
+    setShow(true)
+  }
+  const handleModalClose = () => {
+    setShow(false)
+    setMovieToShow(null)
+  }
+
   const handleChangeRating = (value) => {
     if (value === selectedRating) {
       setSelectedRating(0);
@@ -50,13 +63,14 @@ export function MoviesGrid({ movies }) {
         onChangeRating={handleChangeRating}
         rating={selectedRating}
       />
+      {movieToShow && <MovieModal show={show} movie={movieToShow} handleClose={handleModalClose} />}
       <CardGroup className="cards-container">
         {/* {movies.length === 0 && <span>Loading...</span>} */}
-        <Row xs={2} md={6} className="g-4 movies-container">
+        <Row xs={2} md={6} className="g-3 movies-container">
           {movies.length > 0 &&
             filterMovies().map((movie) => (
               <Col className="movie-container">
-                <MovieCard key={movie.id} movie={movie} />
+                <MovieCard key={movie.id} movie={movie} setMovieToShow={handleShowMovieModal} />
               </Col>
             ))}
         </Row>
@@ -64,3 +78,5 @@ export function MoviesGrid({ movies }) {
     </>
   );
 }
+
+

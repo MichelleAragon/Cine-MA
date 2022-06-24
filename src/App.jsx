@@ -4,6 +4,8 @@ import { MoviesGrid } from "./components/MovieGrid";
 import { SearchBar } from "./components/SearchBar";
 import { Header } from "./components/Header";
 
+
+
 import "./App.css";
 
 
@@ -33,6 +35,7 @@ function App() {
       <Header onSubmitQuery={onSubmitQuery} />
       <SearchBar onSubmitQuery={onSubmitQuery} />
       <MoviesGrid movies={movies} />
+
     </div>
   );
 }
