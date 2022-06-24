@@ -57,7 +57,9 @@ export function MoviesGrid({ movies }) {
       }
     });
 
-  return (
+    const filteredMovies =  filterMovies()
+
+    return (
     <>
       <RatingSelector
         onChangeRating={handleChangeRating}
@@ -65,14 +67,13 @@ export function MoviesGrid({ movies }) {
       />
       {movieToShow && <MovieModal show={show} movie={movieToShow} handleClose={handleModalClose} />}
       <CardGroup className="cards-container">
-        {/* {movies.length === 0 && <span>Loading...</span>} */}
-        <Row xs={2} md={6} className="g-3 movies-container">
-          {movies.length > 0 &&
-            filterMovies().map((movie) => (
+        <Row xs={2} md={6} className="g-4 movies-container">
+          {movies.length > 0 && filteredMovies.length > 0 ? filteredMovies.map((movie) => (
               <Col className="movie-container">
                 <MovieCard key={movie.id} movie={movie} setMovieToShow={handleShowMovieModal} />
               </Col>
-            ))}
+            )) : <span> No movies to show </span>}
+          
         </Row>
       </CardGroup>
     </>

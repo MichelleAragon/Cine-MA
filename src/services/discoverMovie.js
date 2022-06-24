@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 async function discoverMovies() {
   try {
     const { data } = await axios.get(
